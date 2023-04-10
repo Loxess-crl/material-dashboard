@@ -1,0 +1,11 @@
+<div class="sidenav">
+    <div class="content">
+        <div *ngFor="let element of elements" class="element" (click)="activateElement(element)">
+            <mat-icon class="icon">{{element.icon}}</mat-icon>
+            <span>{{element.name}}</span>
+        </div>
+    </div>
+    <div class="secondary-sidenav" *ngIf="elementActive !== undefined && elementActive.subElements">
+        <app-sidenav-secondary [secondaryElements]="elementActive.subElements"></app-sidenav-secondary>
+    </div>
+</div>

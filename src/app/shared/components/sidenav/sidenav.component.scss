@@ -1,0 +1,61 @@
+.sidenav {
+  display: flex;
+  font-size: 12px;
+  height: 100vh;
+  background: #eee;
+  overflow-x: hidden;
+  .content {
+    margin-top: 10px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .element {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .icon {
+        width: auto;
+        height: auto;
+        padding: 0.5rem;
+        font-size: 20px;
+      }
+
+      .span {
+        width: 90%;
+      }
+    }
+
+    .element:hover .icon {
+      background: #c7c7c7;
+      transform: scale(1.1);
+      border-radius: 35%;
+    }
+  }
+
+  .secondary-sidenav {
+    width: 220px;
+    font-size: 14px;
+    height: 100vh;
+    border-left: 1px solid #ccc;
+    border-radius: 0 20px 20px 0;
+    animation: slideIn 0.5s ease-in-out alternate backwards;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use "assets/unprg-colors" as uc;
+
+@include mat.core();
+
+//Typography
+$unprg-typography: mat.define-typography-config(
+  $font-family: 'Segoe UI',
+);
+
+// Font colors::after$light-primary-text: $light-text;
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+
+$dark-text: #000000;
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba($dark-primary-text, 0.54);
+
+// Primary
+$unprg-primary: (
+  main: uc.$primary-color,
+  lighter: #e2f4fd,
+  darker: #205391,
+  200: #86d1f7,
+  // For slide toggle,
+  contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+$unprg-theme-primary: mat.define-palette($unprg-primary, main, lighter, darker);
+
+// Accent
+$unprg-accent: (
+  main: uc.$accent-color,
+  lighter: #dff4fa,
+  darker: #00515b,
+  200: #afe4f1,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text,
+    ),
+);
+$unprg-theme-accent: mat.define-palette($unprg-accent, main, lighter, darker);
+
+// Warning
+$unprg-warn: (
+  main: uc.$warn-color,
+  lighter: #fff8e1,
+  darker: #00515b,
+  200: #ffe182,
+  // For slide toggle,
+  contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+$unprg-theme-warn: mat.define-palette($unprg-warn, main, lighter, darker);
+
+$material-dashboard-warn: mat.define-palette(mat.$red-palette);
+
+// Generate the theme:
+$unprg-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $unprg-theme-primary,
+      accent: $unprg-theme-accent,
+      warn: $material-dashboard-warn,
+    ),
+    typography: $unprg-typography
+  )
+);
+
+
+@include mat.all-component-themes($unprg-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
