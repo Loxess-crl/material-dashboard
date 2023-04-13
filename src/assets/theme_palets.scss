@@ -1,0 +1,95 @@
+$primary-palette: (
+    50: #d8e6f2,
+    100: #b1cde4,
+    200: #86b1d5,
+    300: #6098c8,
+    400: #4284bd,
+    500: #2873b4,
+    600: #205c90,
+    700: #1b4e7a,
+    800: #18456c,
+    900: #133756,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        // ... continues to 900
+    )
+);
+
+$secondary-palette: (
+    50: #e3e3e3,
+    100: #cdcdcd,
+    200: #b7b7b7,
+    300: #a1a1a1,
+    400: #8b8b8b,
+    500: #747474,
+    600: #696969,
+    700: #5d5d5d,
+    800: #525252,
+    900: #464646,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        // ... continues to 900
+    )
+);
+
+$banner-palette: (
+    50: #cfdbe0,
+    100: #a4bbc4,
+    200: #83a2ae,
+    300: #678d9c,
+    400: #3e6f82,
+    500: #00425a,
+    600: #003346,
+    700: #002330,
+    800: #00131a,
+    900: #00080a,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        // ... continues to 900
+    )
+);
+
+$accent-palette: (
+    10: #edf9fb,
+    50: #e5f6fa,
+    100: #d0eff6,
+    200: #bbe8f2,
+    300: #a6e1ee,
+    400: #91daea,
+    500: #7bd2e6,
+    600: #6fbdcf,
+    700: #63a8b8,
+    800: #5793a1,
+    900: #4a7e8a,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        // ... continues to 900
+    )
+);
+
+$yellow-palette: (
+    50: #fff3cc,
+    100: #ffeba8,
+    200: #ffe17f,
+    300: #ffd95b,
+    400: #ffd038,
+    500: #ffc300,
+    600: #e0ac00,
+    700: #b48b00,
+    800: #886900,
+    900: #473700,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        // ... continues to 900
+    )
+);

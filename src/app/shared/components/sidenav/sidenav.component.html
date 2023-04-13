@@ -1,11 +1,19 @@
 <div class="sidenav">
-    <div class="content">
-        <div *ngFor="let element of elements" class="element" (click)="activateElement(element)">
-            <mat-icon class="icon">{{element.icon}}</mat-icon>
-            <span>{{element.name}}</span>
+    <div class="primary-sidenav">
+        <div class="content">
+            <div *ngFor="let element of elements" class="element"
+                (mouseenter)="showSubelements(element)"
+                (click)="onElementClick(element)"
+                >
+                <span
+                    [ngClass]="element.isActive? 'hover-active material-symbols-rounded': 'icon material-symbols-rounded'">{{element.icon}}</span>
+                <p>{{element.name}}</p>
+            </div>
         </div>
     </div>
-    <div class="secondary-sidenav" *ngIf="elementActive !== undefined && elementActive.subElements">
-        <app-sidenav-secondary [secondaryElements]="elementActive.subElements"></app-sidenav-secondary>
+
+    <div class="secondary-sidenav" *ngIf="elementActive !== undefined && elementActive.subElements"
+        (mouseleave)="deactivate()" [ngClass]="animate">
+        <app-secondary-sidenav [secondaryElements]="elementActive.subElements"></app-secondary-sidenav>
     </div>
 </div>

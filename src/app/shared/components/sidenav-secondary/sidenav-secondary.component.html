@@ -2,10 +2,13 @@
   <div
     *ngFor="let secondaryElement of secondaryElements"
     class="secondary-elements"
-    [ngClass]="secondaryElement.isActive ? 'active' : ''"
-    (click)="onSecondaryElementClick(secondaryElement)"
+    [ngClass]="secondaryElement.isActive? 'active' : ''"
   >
-    <div class="subcategories element-hover">
+    <div
+      class="subcategories"
+      [ngClass]="secondaryElement.subcategories? 'has-subcategories' : 'element-hover'"
+      (click)="onSecondaryElementClick(secondaryElement)"
+    >
       <span>
         {{ secondaryElement.name }}
       </span>
@@ -13,10 +16,16 @@
         >expand_more</mat-icon
       >
     </div>
-    <div *ngIf="secondaryElement.subcategories" class="content">
+    <div
+      *ngIf="secondaryElement.subcategories"
+      class="content"
+      [ngClass]="subAnimate"
+    >
       <div
         *ngFor="let subcategory of secondaryElement.subcategories"
-        class="subcategory sub-element-hover"
+        class="sub-element subcategories sub-element-hover"
+        [ngClass]="subcategory.isActive ? 'active' : ''"
+        (click)="onSubcategoryClick(subcategory)"
       >
         <span>
           {{ subcategory.name }}

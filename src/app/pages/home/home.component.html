@@ -1,5 +1,10 @@
 <div class="body">
     <section class="sidenav">
-        <app-sidenav [elements]="elements"></app-sidenav>
+      <app-sidenav></app-sidenav>
     </section>
-</div>
+    <section class="main-content">
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>

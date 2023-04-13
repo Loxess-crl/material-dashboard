@@ -1,51 +1,118 @@
+@use "../../../../assets/theme_palets.scss" as tp;
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+$background-color: map-get(tp.$accent-palette, 10);
+$hover-color: rgba(map-get(tp.$secondary-palette, 100), 0.5);
+$active-color: map-get(tp.$accent-palette, 200);
+$font-color: map-get(tp.$secondary-palette, 900);
+
 .sidenav {
   display: flex;
-  font-size: 12px;
-  height: 100vh;
-  background: #eee;
-  overflow-x: hidden;
-  .content {
-    margin-top: 10px;
-    width: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  flex-direction: row;
 
-    .element {
-      width: 100%;
+  .primary-sidenav {
+    display: flex;
+    font-size: 12px;
+    height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    z-index: 1 !important;
+
+    .content {
+      background-color: $background-color;
+      padding-top: 10px;
+      width: 95px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      gap: 25px;
 
-      .icon {
+      .element {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .icon {
+          width: auto;
+          height: auto;
+          padding: 0.2rem;
+          font-size: 23px;
+        }
+
+        .icon:active {
+          color: #000000;
+        }
+
+        p {
+          font-size: 12.5px;
+          font-weight: 500;
+          padding-top: 0.3rem;
+          margin: 0;
+          color: $font-color;
+        }
+
+        p:active {
+          color: #000000;
+        }
+
+        .material-symbols-rounded {
+          font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
+
+        .hover-active.material-symbols-rounded {
+          font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
+
+      }
+
+      .element:hover .icon {
+        background: $hover-color;
+        transform: scale(1.1);
+        border-radius: 20px;
+        padding-block: 0.2rem;
+        padding-inline: 0.9rem;
+      }
+
+      .hover-active {
         width: auto;
         height: auto;
         padding: 0.5rem;
-        font-size: 20px;
+        font-size: 23px !important;
+        padding-block: 0.2rem;
+        padding-inline: 0.9rem;
+        transform: scale(1.1);
+        background: $active-color;
+        border-radius: 20px;
       }
-
-      .span {
-        width: 90%;
-      }
-    }
-
-    .element:hover .icon {
-      background: #c7c7c7;
-      transform: scale(1.1);
-      border-radius: 35%;
     }
   }
 
   .secondary-sidenav {
-    width: 220px;
+    position: absolute;
+    left: 95px;
+    width: 250px;
     font-size: 14px;
     height: 100vh;
+    background-color: $background-color;
     border-left: 1px solid #ccc;
     border-radius: 0 20px 20px 0;
-    animation: slideIn 0.5s ease-in-out alternate backwards;
+    box-shadow: 0.001px 0 3px 0 $font-color;
+    animation: slideIn 0.2s ease-in;
+  }
+
+  .animate-out{
+    animation: slideOut 0.2s ease-out;
   }
 }
 
@@ -54,8 +121,21 @@
     opacity: 0;
     transform: translateX(-50%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%);
   }
 }

@@ -1,11 +1,14 @@
-@use '@angular/material' as mat;
-@use "assets/theme-colors" as tc;
 
+@use "@angular/material" as mat;
+@use "theme-colors" as tc;
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans');
 @include mat.core();
+
 
 //Typography
 $unprg-typography: mat.define-typography-config(
-  $font-family: 'Segoe UI',
+  $font-family: 'Google Sans, sans-serif',
 );
 
 // Font colors::after$light-primary-text: $light-text;
@@ -65,23 +68,21 @@ $unprg-warn: (
 );
 $unprg-theme-warn: mat.define-palette($unprg-warn, main, lighter, darker);
 
-$material-dashboard-warn: mat.define-palette(mat.$red-palette);
-
 // Generate the theme:
 $unprg-theme: mat.define-light-theme(
   (
     color: (
       primary: $unprg-theme-primary,
       accent: $unprg-theme-accent,
-      warn: $material-dashboard-warn,
+     /*  warn: $unprg-theme-warn, */
     ),
-    typography: $unprg-typography
+    typography: $unprg-typography,
+    density: 0,
   )
 );
 
-
 @include mat.all-component-themes($unprg-theme);
 
+//Se le agrega la propiedad disableRipple a todos los botones
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+

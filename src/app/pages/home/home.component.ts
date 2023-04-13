@@ -5,12 +5,14 @@ export interface ElementSidenav {
   icon: string;
   subElements?: SecondaryElement[];
   isActive: boolean;
+  link?: string;
 }
 
 export interface SecondaryElement {
   name: string;
   subcategories?: SecondaryElement[];
   isActive: boolean;
+  link?: string;
 }
 
 @Component({
@@ -19,72 +21,5 @@ export interface SecondaryElement {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
-  elements:ElementSidenav[] = [
-    {
-      name: 'Home',
-      icon: 'home',
-      isActive: false,
-    },
-    {
-      name: 'Get started',
-      icon: 'apps',
-      isActive: false,
-    },
-    {
-      name: 'Development',
-      icon: 'code',
-      isActive: false,
-      subElements: [
-        {
-          name: 'Develop overview',
-          isActive: false,
-        },
-        {
-          name: 'Android',
-          subcategories: [
-            {
-              name: 'MDC-Android',
-              isActive: false,
-            },
-            {
-              name: 'Jetpack Compose',
-              isActive: false,
-            },
-          ],
-          isActive: false,
-        },
-        {
-          name: 'Flutter',
-          isActive: false,
-        },
-        {
-          name: 'Web',
-          isActive: false,
-        },
-      ],
-    },
-    {
-      name: 'Foundations',
-      icon: 'book',
-      isActive: false,
-    },
-    {
-      name: 'Styles',
-      icon: 'palette',
-      isActive: false,
-    },
-    {
-      name: 'Components',
-      icon: 'add_circle',
-      isActive: false,
-    },
-    {
-      name: 'Blog',
-      icon: 'pages',
-      isActive: false,
-    },
-  ];
-
 
 }

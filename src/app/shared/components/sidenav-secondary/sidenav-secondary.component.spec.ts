@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidenavSecondaryComponent } from './sidenav-secondary.component';
+import { SecondarySidenavComponent } from './sidenav-secondary.component';
 
 describe('SidenavSecondaryComponent', () => {
-  let component: SidenavSecondaryComponent;
-  let fixture: ComponentFixture<SidenavSecondaryComponent>;
+  let component: SecondarySidenavComponent;
+  let fixture: ComponentFixture<SecondarySidenavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidenavSecondaryComponent ]
+      declarations: [ SecondarySidenavComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidenavSecondaryComponent);
+    fixture = TestBed.createComponent(SecondarySidenavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
